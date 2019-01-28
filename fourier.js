@@ -1,14 +1,14 @@
 function dft(x){
-  N = x.length ;
+  const N = x.length ;
   const X = [];
 
   for (let k=0; k<N; k++){
     let re = 0;
     let im = 0;
-    for (n=0; n<N; n++){
+    for (let n=0; n<N; n++){
       const phi = TWO_PI*k*n/N ;
-      re[k] += x[k]*sin(phi) ;
-      im[k] -= x[k]*cos(phi) ;
+      re += x[n]*cos(phi) ;
+      im -= x[n]*sin(phi) ;
     }
     re = re/N;
     im = im/N;
